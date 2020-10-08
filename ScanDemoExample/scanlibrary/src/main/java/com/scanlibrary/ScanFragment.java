@@ -82,7 +82,10 @@ public class ScanFragment extends Fragment {
         try {
             Bitmap bitmap = Utils.getBitmap(getActivity(), uri);
             getActivity().getContentResolver().delete(uri, null, null);
-            return bitmap;
+            Matrix matrix = new Matrix();
+            matrix.postRotate(90);
+            return Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+//            return bitmap;
         } catch (IOException e) {
             e.printStackTrace();
         }

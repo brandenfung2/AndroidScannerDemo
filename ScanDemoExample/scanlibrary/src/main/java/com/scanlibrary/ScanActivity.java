@@ -10,6 +10,8 @@ import android.os.Bundle;
 
 /**
  * Created by jhansi on 28/03/15.
+ *
+ * Modified by Branden Fung on 23/09/2020.
  */
 public class ScanActivity extends Activity implements IScanner, ComponentCallbacks2 {
 
@@ -44,7 +46,7 @@ public class ScanActivity extends Activity implements IScanner, ComponentCallbac
         android.app.FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.content, fragment);
-        fragmentTransaction.addToBackStack(ScanFragment.class.toString());
+//        fragmentTransaction.addToBackStack(ScanFragment.class.toString());
         fragmentTransaction.commit();
     }
 

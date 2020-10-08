@@ -8,7 +8,7 @@
     <dimen name="polygonViewStrokeWidth">2dp</dimen>
     <!-- ScanPadding must be half of polygonViewCircleWidth -->
 
-    <dimen name="bottom_bar_padding">15dp</dimen>
+    <dimen name="bottom_bar_padding">16dp</dimen>
 
 
 </resources>

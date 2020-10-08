@@ -19,6 +19,8 @@ import java.io.IOException;
 
 /**
  * Created by jhansi on 29/03/15.
+ *
+ * Modified by Branden Fung on 23/09/2020.
  */
 public class ResultFragment extends Fragment {
 
@@ -98,13 +100,8 @@ public class ResultFragment extends Fragment {
                         getActivity().setResult(Activity.RESULT_OK, data);
                         original.recycle();
                         System.gc();
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                dismissDialog();
-                                getActivity().finish();
-                            }
-                        });
+                        dismissDialog();
+                        getActivity().finish();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Modified by Branden Fung on 25/09/2020. -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
     android:orientation="vertical">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/scanButton"
-        android:layout_width="fill_parent"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:background="@color/bottom_background_color"
         android:orientation="horizontal"
-        android:padding="@dimen/bottom_bar_padding"
-        android:text="@string/scan"></Button>
+        android:layout_margin="12dp"
+        android:text="@string/scan"
+        android:textSize="16sp" />
 
     <FrameLayout
         android:layout_width="match_parent"
