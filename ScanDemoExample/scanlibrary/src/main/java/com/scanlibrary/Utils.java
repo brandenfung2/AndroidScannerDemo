@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.provider.MediaStore;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
@@ -27,5 +29,16 @@ public class Utils {
     public static Bitmap getBitmap(Context context, Uri uri) throws IOException {
         Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), uri);
         return bitmap;
+    }
+
+    public static File saveBitmapAsJpeg(Bitmap bitmap, File folder) throws IOException {
+        File imageFile = new File(folder, File.createTempFile("image", ".jpg").getName());
+
+        FileOutputStream os = new FileOutputStream(imageFile);
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, os);
+        os.flush();
+        os.close();
+
+        return imageFile;
     }
 }
